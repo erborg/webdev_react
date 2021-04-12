@@ -1,6 +1,8 @@
 import React from "react";
+import clsx from "clsx";
 
 export default function Button(props) {
-    const {text, type, disabled} = props;
-    return <button type={type} disabled={disabled} className="ui-button">{text}</button>
+    const {text, newClass, ...rest} = props;
+    let className = clsx({"ui-button": true}, newClass);
+    return <button className={className} {...rest}>{text}</button>
 }
